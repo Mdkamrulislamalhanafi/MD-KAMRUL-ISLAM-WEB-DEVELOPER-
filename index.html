@@ -79,6 +79,39 @@ body.dark-mode h2 {
 body.dark-mode nav,
 body.dark-mode footer {
   background: #000;
+}.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #f0f0f0;
+  color: #222;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+}
+
+.project-card a {
+  display: inline-block;
+  background: #111;
+  color: white;
+  padding: 10px 18px;
+  margin-top: 15px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+body.dark-mode .project-card {
+  background: #222;
+  color: white;
+  border-color: #444;
 }</style>
 </head>
 
@@ -127,8 +160,40 @@ MK
 
 <section id="projects">
   <h2>My Projects | আমার কাজ</h2>
-  <p>Personal Portfolio Website</p>
-  <p>Modern Responsive Web Design</p>
+
+  <div class="project-gallery">
+
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>Personal Portfolio Website</p>
+      <a href="#">Live Demo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>Islamic Website</p>
+      <a href="#">Live Demo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <p>Business Website</p>
+      <a href="#">Live Demo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Project 4</h3>
+      <p>Education Website</p>
+      <a href="#">Live Demo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Project 5</h3>
+      <p>Islamic Media Website</p>
+      <a href="#">Live Demo</a>
+    </div>
+
+  </div>
 </section>
 
 <section id="contact" class="contact">
