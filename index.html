@@ -65,7 +65,21 @@ footer{
   text-align:center;
   padding:20px;
 }
-</style>
+body.dark-mode {
+  background: #111;
+  color: white;
+}
+body.dark-mode section {
+  background: #222;
+  color: white;
+}
+body.dark-mode h2 {
+  color: white;
+}
+body.dark-mode nav,
+body.dark-mode footer {
+  background: #000;
+}</style>
 </head>
 
 <body>
@@ -75,6 +89,9 @@ MK
 </div>
   <h1>MD KAMRUL ISLAM</h1>
   <p>Web Developer | ওয়েব ডেভেলপার</p>
+  <button onclick="toggleMode()">
+🌙 Dark / ☀️ Light
+</button>
   <p>Creating Modern & Responsive Websites</p>
 </header>
 
@@ -128,6 +145,10 @@ MK
 <footer>
   <p>© 2026 MD KAMRUL ISLAM. All Rights Reserved.</p>
 </footer>
-
+<script>
+function toggleMode(){
+  document.body.classList.toggle('dark-mode');
+}
+</script>
 </body>
 </html>
