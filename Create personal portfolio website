@@ -115,10 +115,20 @@ Welcome to my personal portfolio website.</p>
 
 <section id="contact">
 <h2>Contact Me | যোগাযোগ</h2>
-<p>Email: Your email address</p>
-<p>WhatsApp: Your WhatsApp number</p>
-</section>
 
+<a class="btn" href="https://wa.me/8801732668283">
+WhatsApp
+</a>
+
+<a class="btn" href="https://www.facebook.com/MDkislam.786">
+Facebook
+</a>
+
+<a class="btn" href="mailto:Kamrulislam977968@gmail.com">
+Email Me
+</a>
+
+</section>
 <footer>
 <p>© 2026 MD KAMRUL ISLAM</p>
 <p>Designed with passion.</p>
