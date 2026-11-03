@@ -13,15 +13,103 @@ body{
   color:#222;
   line-height:1.7;
 }
-header{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:65px 15px;
+
+/* --- নতুন টেক-থিমড হিরো সেকশন ডিজাইন --- */
+.hero-spark {
+  background: linear-gradient(135deg, #0b1d3a 0%, #16365c 100%);
+  color: #ffffff;
+  padding: 70px 10%;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
-header h1{font-size:32px}
-header p{color:#ccc;margin-top:10px}
-header button{
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.glow-effect {
+  flex: 1;
+  min-width: 280px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255,165,0,0.8) 0%, rgba(255,140,0,0.3) 40%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon-cluster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.spark-icon {
+  position: absolute;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.spark-icon:nth-child(1) { top: 20%; left: 15%; }
+.spark-icon:nth-child(2) { top: 60%; left: 30%; }
+.spark-icon:nth-child(3) { top: 30%; right: 20%; }
+.spark-icon:nth-child(4) { bottom: 20%; right: 35%; }
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-size: clamp(32px, 5vw, 50px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero-text h2 {
+  font-size: 20px;
+  color: #c9a227;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #d1d5db;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.explore-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff7e00, #ff5100);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255, 126, 0, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 126, 0, 0.6);
+}
+
+/* মোড টগল বাটন */
+.mode-btn {
   margin-top: 15px;
   padding: 8px 16px;
   background: #c9a227;
@@ -31,7 +119,8 @@ header button{
   font-weight: bold;
   cursor: pointer;
 }
-header button:hover{background: #e6b82e;}
+.mode-btn:hover { background: #e6b82e; }
+
 nav{
   background:#222;
   padding:15px;
@@ -129,15 +218,30 @@ body.dark-mode .project-card {
 
 <body>
 
-<header>
-  <div style="width:90px;height:90px;border-radius:50%;background:#111;color:white;border:3px solid #c9a227;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:bold;margin:0 auto 15px;">
-    MK
+<!-- নতুন হিরো সেকশন -->
+<section class="hero-spark">
+  <div class="hero-content">
+    <div class="glow-effect">
+      <div class="icon-cluster">
+        <span class="spark-icon">💡</span>
+        <span class="spark-icon">💻</span>
+        <span class="spark-icon">📊</span>
+        <span class="spark-icon">⚙️</span>
+      </div>
+    </div>
+    <div class="hero-text">
+      <div style="width:70px;height:70px;border-radius:50%;background:#111;color:white;border:2px solid #c9a227;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:bold;margin-bottom:15px;">
+        MK
+      </div>
+      <h1>MD KAMRUL ISLAM</h1>
+      <h2>Web Developer | ওয়েব ডেভেলপার</h2>
+      <p>Creating Modern & Responsive Websites through Innovative Technology</p>
+      <button class="mode-btn" onclick="toggleMode()">🌙 Dark / ☀️ Light</button>
+      <br><br>
+      <a href="#projects" class="explore-btn">Explore My Projects</a>
+    </div>
   </div>
-  <h1>MD KAMRUL ISLAM</h1>
-  <p>Web Developer | ওয়েব ডেভেলপার</p>
-  <button onclick="toggleMode()">🌙 Dark / ☀️ Light</button>
-  <p>Creating Modern & Responsive Websites</p>
-</header>
+</section>
 
 <nav>
   <a href="#about">About</a>
