@@ -3,341 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MD KAMRUL ISLAM | Web Developer</title>
+<title>MD KAMRUL ISLAM | Web Developer Dashboard</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:Arial,sans-serif;
-  background:#f5f5f5;
-  color:#222;
-  line-height:1.7;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  padding: 15px;
 }
 
-/* --- টেক-থিমড হিরো সেকশন ডিজাইন --- */
-.hero-spark {
-  background: linear-gradient(135deg, #0b1d3a 0%, #16365c 100%);
-  color: #ffffff;
-  padding: 70px 10%;
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+/* প্রজেক্ট হেডার স্টাইল (MK লোগো সহ) */
+.project-header {
+  text-align: center;
+  background: #111;
+  color: white;
+  padding: 25px 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-bottom: 4px solid #c9a227;
 }
 
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.glow-effect {
-  flex: 1;
-  min-width: 280px;
-  height: 260px;
-  background: radial-gradient(circle, rgba(255,165,0,0.8) 0%, rgba(255,140,0,0.3) 40%, transparent 70%);
+.mk-logo-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #111;
+  color: white;
+  border: 3px solid #c9a227;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0 auto 12px auto;
 }
 
-.icon-cluster {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.project-header h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  letter-spacing: 1px;
 }
-
-.spark-icon {
-  position: absolute;
-  font-size: 24px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.spark-icon:nth-child(1) { top: 20%; left: 15%; }
-.spark-icon:nth-child(2) { top: 60%; left: 30%; }
-.spark-icon:nth-child(3) { top: 30%; right: 20%; }
-.spark-icon:nth-child(4) { bottom: 20%; right: 35%; }
-
-.hero-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.hero-text h1 {
-  font-size: clamp(32px, 5vw, 50px);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 15px;
-}
-
-.hero-text h2 {
-  font-size: 20px;
+.project-header p {
+  font-size: 14px;
   color: #c9a227;
-  margin-bottom: 10px;
+  font-weight: 500;
 }
 
-.hero-text p {
-  font-size: 16px;
-  color: #d1d5db;
-  margin-bottom: 25px;
-  font-style: italic;
-}
-
-.explore-btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff7e00, #ff5100);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(255, 126, 0, 0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.explore-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 126, 0, 0.6);
-}
-
-/* মোড টগল বাটন */
-.mode-btn {
-  margin-top: 15px;
-  padding: 8px 16px;
-  background: #c9a227;
-  color: #111;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.mode-btn:hover { background: #e6b82e; }
-
-nav {
-  background: #222;
-  padding: 15px;
-  text-align: center;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-section {
-  max-width: 850px;
-  margin: 25px auto;
-  padding: 30px 20px;
-  background: white;
-  border-radius: 12px;
-}
-h2 {
-  margin-bottom: 15px;
-  color: #111;
-}
-.skills span {
-  display: inline-block;
-  background: #111;
-  color: white;
-  padding: 8px 14px;
-  margin: 5px;
-  border-radius: 20px;
-}
-.contact a {
-  display: inline-block;
-  background: #111;
-  color: white;
-  text-decoration: none;
-  padding: 12px 18px;
-  margin: 7px 5px;
-  border-radius: 7px;
-}
-.contact a:hover { background: #444; }
-footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* ডার্ক মোড স্টাইল */
-body.dark-mode {
-  background: #111;
-  color: white;
-}
-body.dark-mode section {
-  background: #222;
-  color: white;
-}
-body.dark-mode h2 {
-  color: white;
-}
-body.dark-mode nav,
-body.dark-mode footer {
-  background: #000;
-}
-
-/* প্রজেক্ট গ্যালারি */
-.project-gallery {
+/* ড্যাশবোর্ড গ্রিড */
+.dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
 }
 
-.project-card {
-  background: #f0f0f0;
-  color: #222;
-  padding: 25px;
+.card {
+  background: #1b4d3e;
+  color: white;
+  padding: 20px 10px;
   border-radius: 12px;
   text-align: center;
-  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border: 1px solid #c9a227;
 }
 
-.project-card h3 {
-  margin-bottom: 10px;
+.card h3 {
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 5px;
 }
 
-.project-card a {
-  display: inline-block;
+.card p {
+  font-size: 12px;
+  color: #d1d5db;
+}
+
+/* অ্যাডমিন লগইন সেকশন */
+.admin-login-box {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.admin-login-box h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #111;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.login-btn {
   background: #111;
   color: white;
-  padding: 10px 18px;
-  margin-top: 15px;
-  border-radius: 7px;
-  text-decoration: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-body.dark-mode .project-card {
-  background: #222;
-  color: white;
-  border-color: #444;
+.login-btn:hover {
+  background: #333;
+}
+
+.forgot-pass {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.forgot-pass a {
+  color: #111;
+  text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- হিরো সেকশন -->
-<section class="hero-spark">
-  <div class="hero-content">
-    <div class="glow-effect">
-      <div class="icon-cluster">
-        <span class="spark-icon">💡</span>
-        <span class="spark-icon">💻</span>
-        <span class="spark-icon">📊</span>
-        <span class="spark-icon">⚙️</span>
-      </div>
-    </div>
-    <div class="hero-text">
-      <div style="width:70px;height:70px;border-radius:50%;background:#111;color:white;border:2px solid #c9a227;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:bold;margin-bottom:15px;">
-        MK
-      </div>
-      <h1>MD KAMRUL ISLAM</h1>
-      <h2>Web Developer | ওয়েব ডেভেলপার</h2>
-      <p>Creating Modern & Responsive Websites through Innovative Technology</p>
-      <button class="mode-btn" onclick="toggleMode()">🌙 Dark / ☀️ Light</button>
-      <br><br>
-      <a href="#projects" class="explore-btn">Explore My Projects</a>
-    </div>
+<!-- হেডার সেকশন (MK লোগো এবং নাম সহ) -->
+<div class="project-header">
+  <div class="mk-logo-circle">MK</div>
+  <h1>MD KAMRUL ISLAM</h1>
+  <p>WEB DEVELOPER</p>
+</div>
+
+<!-- ড্যাশবোর্ড কার্ডসমূহ -->
+<div class="dashboard-grid">
+  <div class="card">
+    <div style="font-size: 22px;">👨‍💻</div>
+    <h3>Projects</h3>
+    <p>পোর্টফোলিও প্রজেক্ট</p>
   </div>
-</section>
 
-<!-- নেভিগেশন বার -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<!-- অ্যাবাউট সেকশন -->
-<section id="about">
-  <h2>About Me | আমার পরিচয়</h2>
-  <p>
-    Hello! I am MD Kamrul Islam. I am passionate about web development
-    and creating modern, beautiful and responsive websites.
-  </p>
-  <p>
-    আমি মুহাম্মদ কামরুল ইসলাম। আধুনিক ও সুন্দর ওয়েবসাইট তৈরি করতে
-    ভালোবাসি। নতুন নতুন প্রযুক্তি শিখতে আগ্রহী।
-  </p>
-</section>
-
-<!-- স্কিলস সেকশন -->
-<section id="skills">
-  <h2>My Skills | দক্ষতা</h2>
-  <div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>Web Design</span>
-    <span>Responsive Design</span>
+  <div class="card">
+    <div style="font-size: 22px;">🌐</div>
+    <h3>Web Design</h3>
+    <p>মডার্ন ডিজাইন</p>
   </div>
-</section>
 
-<!-- প্রজেক্টস সেকশন -->
-<section id="projects">
-  <h2>My Projects | আমার কাজ</h2>
-
-  <div class="project-gallery">
-    <div class="project-card">
-      <h3>Project 1</h3>
-      <p>Personal Portfolio Website</p>
-      <a href="https://ah6124670-ai.github.io/ahmad-portfolio/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Project 2</h3>
-      <p>AmeriBritPulse – USA News Website</p>
-      <a href="https://kamrulik.blogspot.com/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Project 3</h3>
-      <p>Ahmed Business Solutions</p>
-      <a href="https://ah6124670-ai.github.io/ahmed-business-solutions/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Project 4</h3>
-      <p>Education Website</p>
-    </div>
-
-    <div class="project-card">
-      <h3>Project 5</h3>
-      <p>Islamic Media Website</p>
-    </div>
+  <div class="card">
+    <div style="font-size: 22px;">📅</div>
+    <h3>Activity</h3>
+    <p>Active</p>
   </div>
-</section>
 
-<!-- কন্টাক্ট সেকশন -->
-<section id="contact" class="contact">
-  <h2>Contact Me | যোগাযোগ</h2>
-  <p>Let's work together!</p>
+  <div class="card">
+    <div style="font-size: 22px;">📊</div>
+    <h3>Analytics</h3>
+    <p>পারফরম্যান্স</p>
+  </div>
 
-  <a href="https://wa.me/8801732668283" target="_blank">WhatsApp</a>
-  <a href="https://www.facebook.com/MDkislam.786" target="_blank">Facebook</a>
-  <a href="mailto:Kamrulislam977968@gmail.com">Email Me</a>
-</section>
+  <div class="card">
+    <div style="font-size: 22px;">🔔</div>
+    <h3>Notices</h3>
+    <p>নোটিশ বোর্ড</p>
+  </div>
 
-<!-- ফুটার -->
-<footer>
-  <p>© 2026 MD KAMRUL ISLAM. All Rights Reserved.</p>
-</footer>
+  <div class="card">
+    <div style="font-size: 22px;">📝</div>
+    <h3>Contact</h3>
+    <p>যোগাযোগ</p>
+  </div>
+</div>
 
-<!-- জাভাস্ক্রিপ্ট -->
-<script>
-function toggleMode(){
-  document.body.classList.toggle('dark-mode');
-}
-</script>
+<!-- লগইন ফর্ম -->
+<div class="admin-login-box">
+  <h2>Admin Login</h2>
+  <form>
+    <div class="form-group">
+      <label>ইমেইল (Admin Email)</label>
+      <input type="email" placeholder="Kamrulislam977968@gmail.com" required>
+    </div>
+    
+    <div class="form-group">
+      <label>পাসওয়ার্ড (Password)</label>
+      <input type="password" placeholder="••••••••" required>
+    </div>
+
+    <div class="login-btn-container">
+      <button type="submit" class="login-btn">Login</button>
+    </div>
+
+    <div class="forgot-pass">
+      <a href="#">পাসওয়ার্ড ভুলে গেছেন?</a>
+    </div>
+  </form>
+</div>
+
 </body>
 </html>
