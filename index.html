@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +21,17 @@ header{
 }
 header h1{font-size:32px}
 header p{color:#ccc;margin-top:10px}
+header button{
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #c9a227;
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+header button:hover{background: #e6b82e;}
 nav{
   background:#222;
   padding:15px;
@@ -79,7 +89,8 @@ body.dark-mode h2 {
 body.dark-mode nav,
 body.dark-mode footer {
   background: #000;
-}.project-gallery {
+}
+.project-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -112,19 +123,19 @@ body.dark-mode .project-card {
   background: #222;
   color: white;
   border-color: #444;
-}</style>
+}
+</style>
 </head>
 
 <body>
 
-<header><div style="width:90px;height:90px;border-radius:50%;background:#111;color:white;border:3px solid #c9a227;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:bold;margin:0 auto 15px;">
-MK
-</div>
+<header>
+  <div style="width:90px;height:90px;border-radius:50%;background:#111;color:white;border:3px solid #c9a227;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:bold;margin:0 auto 15px;">
+    MK
+  </div>
   <h1>MD KAMRUL ISLAM</h1>
   <p>Web Developer | ওয়েব ডেভেলপার</p>
-  <button onclick="toggleMode()">
-🌙 Dark / ☀️ Light
-</button>
+  <button onclick="toggleMode()">🌙 Dark / ☀️ Light</button>
   <p>Creating Modern & Responsive Websites</p>
 </header>
 
@@ -159,39 +170,37 @@ MK
 </section>
 
 <section id="projects">
-<h2>My Projects | আমার কাজ</h2>
+  <h2>My Projects | আমার কাজ</h2>
 
-<div class="project-gallery">
+  <div class="project-gallery">
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>Personal Portfolio Website</p>
+      <a href="https://ah6124670-ai.github.io/ahmad-portfolio/" target="_blank">Live Demo</a>
+    </div>
 
-<div class="project-card">
-<h3>Project 1</h3>
-<p>Personal Portfolio Website</p>
-<a href="https://ah6124670-ai.github.io/ahmad-portfolio/" target="_blank">Live Demo</a></div>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>AmeriBritPulse – USA News Website</p>
+      <a href="https://kamrulik.blogspot.com/" target="_blank">Live Demo</a>
+    </div>
 
-<div class="project-card">
-<h3>Project 2</h3>
-<p>Islamic Website</p>
-<div class="project-card">
-<h3>Project 2</h3>
-<p>AmeriBritPulse – USA News Website</p>
-<a href="https://kamrulik.blogspot.com/" target="_blank">Live Demo</a>
-</div></div>
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <p>Ahmed Business Solutions</p>
+      <a href="https://ah6124670-ai.github.io/ahmed-business-solutions/" target="_blank">Live Demo</a>
+    </div>
 
-<div class="project-card">
-<h3>Project 3</h3>
-<p>Ahmed Business Solutions</p>
-<a href="https://ah6124670-ai.github.io/ahmed-business-solutions/" target="_blank">Live Demo</a>
-</div>
+    <div class="project-card">
+      <h3>Project 4</h3>
+      <p>Education Website</p>
+    </div>
 
-<div class="project-card">
-<h3>Project 4</h3>
-<p>Education Website</p>
-</div>
-
-<div class="project-card">
-<h3>Project 5</h3>
-<p>Islamic Media Website</p>
-</div>
+    <div class="project-card">
+      <h3>Project 5</h3>
+      <p>Islamic Media Website</p>
+    </div>
+  </div>
 </section>
 
 <section id="contact" class="contact">
@@ -199,15 +208,14 @@ MK
   <p>Let's work together!</p>
 
   <a href="https://wa.me/8801732668283" target="_blank">WhatsApp</a>
-
   <a href="https://www.facebook.com/MDkislam.786" target="_blank">Facebook</a>
-
   <a href="mailto:Kamrulislam977968@gmail.com">Email Me</a>
 </section>
 
 <footer>
   <p>© 2026 MD KAMRUL ISLAM. All Rights Reserved.</p>
 </footer>
+
 <script>
 function toggleMode(){
   document.body.classList.toggle('dark-mode');
