@@ -1,178 +1,121 @@
-.hero-spark {
-  background: linear-gradient(135deg, #0b1d3a 0%, #16365c 100%);
-  color: #ffffff;
-  padding: 80px 10%;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD KAMRUL ISLAM | Web Developer</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 40px;
-  flex-wrap: wrap;
-}
+<body>
 
-/* গ্লোয়িং এবং লাইট ইফেক্ট */
-.glow-effect {
-  flex: 1;
-  min-width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255,165,0,0.8) 0%, rgba(255,140,0,0.3) 40%, transparent 70%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+<!-- হিরো সেকশন -->
+<section class="hero-spark">
+  <div class="hero-content">
+    
+    <!-- গোল লোগো ব্যাজ -->
+    <div class="circle-logo-card">
+      <div class="logo-badge">
+        <div class="logo-icon">MK</div>
+        <div class="logo-title">MD Kamrul Islam</div>
+        <div class="logo-subtitle">Web Developer</div>
+        
+        <div class="badge-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+        </div>
 
-.icon-cluster {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+        <div class="icon-row">
+          <div class="mini-icon">💻</div>
+          <div class="mini-icon">⚡</div>
+          <div class="mini-icon">🌐</div>
+        </div>
+        
+        <div class="logo-footer-text">Modern Web Solutions</div>
+      </div>
+    </div>
 
-.spark-icon {
-  position: absolute;
-  font-size: 24px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
+    <!-- হিরো টেক্সট ও টগল বাটন -->
+    <div class="hero-text">
+      <h1>MD KAMRUL ISLAM</h1>
+      <h2>Professional Web Developer</h2>
+      <p>Creating Modern, Responsive & User-Friendly Websites through Innovative Technology.</p>
+      <button class="explore-btn" onclick="toggleMode()" style="border:none; cursor:pointer;">🌙 Dark / ☀️ Light</button>
+      <a href="#projects" class="explore-btn" style="margin-left: 10px;">Explore My Work</a>
+    </div>
 
-.spark-icon:nth-child(1) { top: 20%; left: 15%; }
-.spark-icon:nth-child(2) { top: 60%; left: 30%; }
-.spark-icon:nth-child(3) { top: 30%; right: 20%; }
-.spark-icon:nth-child(4) { bottom: 20%; right: 35%; }
+  </div>
+</section>
 
-.hero-text {
-  flex: 1;
-  min-width: 300px;
-}
+<!-- নেভিগেশন -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-.hero-text h1 {
-  font-size: clamp(36px, 5vw, 52px);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 15px;
-}
+<!-- অ্যাবাউট সেকশন -->
+<section id="about">
+  <h2>About Me | আমার পরিচয়</h2>
+  <p>Hello! I am MD Kamrul Islam. I am passionate about web development and creating modern, beautiful and responsive websites.</p>
+  <p>আমি মুহাম্মদ কামরুল ইসলাম। আধুনিক ও সুন্দর ওয়েবসাইট তৈরি করতে ভালোবাসি। নতুন নতুন প্রযুক্তি শিখতে আগ্রহী।</p>
+</section>
 
-.circle-logo-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  background: #f0f4f8;
-}
+<!-- স্কিলস সেকশন -->
+<section id="skills">
+  <h2>My Skills | দক্ষতা</h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Web Design</span>
+    <span>Responsive Design</span>
+  </div>
+</section>
 
-.logo-badge {
-  width: 320px;
-  height: 320px;
-  background: linear-gradient(135deg, #0b1d3a 0%, #16365c 100%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border: 6px solid #22c55e;
-  position: relative;
-}
+<!-- প্রজেক্টস সেকশন -->
+<section id="projects">
+  <h2>My Projects | আমার কাজ</h2>
+  <div class="project-gallery">
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>Personal Portfolio Website</p>
+      <a href="https://ah6124670-ai.github.io/ahmad-portfolio/" target="_blank">Live Demo</a>
+    </div>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>AmeriBritPulse – USA News Website</p>
+      <a href="https://kamrulik.blogspot.com/" target="_blank">Live Demo</a>
+    </div>
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <p>Ahmed Business Solutions</p>
+      <a href="https://ah6124670-ai.github.io/ahmed-business-solutions/" target="_blank">Live Demo</a>
+    </div>
+  </div>
+</section>
 
-.logo-icon {
-  width: 50px;
-  height: 50px;
-  background: #22c55e;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 8px;
-}
+<!-- কন্টাক্ট সেকশন -->
+<section id="contact" class="contact">
+  <h2>Contact Me | যোগাযোগ</h2>
+  <p>Let's work together!</p>
+  <a href="https://wa.me/8801732668283" target="_blank">WhatsApp</a>
+  <a href="https://www.facebook.com/MDkislam.786" target="_blank">Facebook</a>
+  <a href="mailto:Kamrulislam977968@gmail.com">Email Me</a>
+</section>
 
-.logo-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 4px;
-}
+<!-- ফুটার -->
+<footer>
+  <p>© 2026 MD KAMRUL ISLAM. All Rights Reserved.</p>
+</footer>
 
-.logo-subtitle {
-  font-size: 12px;
-  color: #93c5fd;
-  margin-bottom: 10px;
+<script>
+function toggleMode(){
+  document.body.classList.toggle('dark-mode');
 }
+</script>
 
-.badge-tags {
-  display: flex;
-  gap: 5px;
-  font-size: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 10px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-
-.icon-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.mini-icon {
-  background: rgba(255, 255, 255, 0.2);
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-}
-
-.logo-footer-text {
-  font-size: 11px;
-  font-style: italic;
-  color: #cbd5e1;
-}
-
-.hero-text p {
-  font-size: 18px;
-  color: #d1d5db;
-  margin-bottom: 30px;
-  font-style: italic;
-}
-
-.explore-btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff7e00, #ff5100);
-  color: white;
-  padding: 14px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(255, 126, 0, 0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.explore-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 126, 0, 0.6);
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+</body>
+</html>
