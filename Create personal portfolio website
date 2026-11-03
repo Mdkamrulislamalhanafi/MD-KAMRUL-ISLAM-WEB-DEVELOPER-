@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +23,9 @@ button,.btn{
  padding:11px 20px;border:0;
  border-radius:5px;cursor:pointer;
  text-decoration:none;
+ display:inline-block;
 }
+button:hover, .btn:hover{background:#333}
 nav{display:flex;gap:20px}
 nav a{color:#111;text-decoration:none}
 .hero{
@@ -46,11 +47,20 @@ h2{font-size:32px;margin-bottom:20px}
  padding:22px;border:1px solid #ddd;
  margin:12px 0;border-radius:8px;
 }
+.contact-links{
+ display:flex;
+ gap:15px;
+ flex-wrap:wrap;
+ margin-top:15px;
+}
 footer{
  background:#111;color:white;
  text-align:center;padding:30px;
 }
-#bn{display:none}
+
+/* ভাষা টগল করার জন্য ডিফল্ট স্টাইল */
+.lang-bn { display: none; }
+
 @media(max-width:600px){
  header{padding:15px 5%}
  nav{gap:10px;font-size:12px}
@@ -70,24 +80,22 @@ footer{
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
 </nav>
-<button onclick="toggleLang()">বাংলা</button>
+<button onclick="toggleLang()" id="langBtn">বাংলা</button>
 </header>
 
 <div class="hero" id="home">
 <small>HELLO, WELCOME TO MY WEBSITE</small>
 <h1>MD KAMRUL ISLAM</h1>
 <h2>Professional Web Developer</h2>
-<p id="en">I create modern, clean and responsive websites.</p>
-<p id="bn">আমি আধুনিক ও সুন্দর ওয়েবসাইট তৈরি করি।</p>
+<p class="lang-en">I create modern, clean and responsive websites.</p>
+<p class="lang-bn">আমি আধুনিক ও সুন্দর ওয়েবসাইট তৈরি করি।</p>
 <a class="btn" href="#contact">Contact Me</a>
 </div>
 
 <section id="about">
 <h2>About Me | আমার পরিচয়</h2>
-<p id="aboutEn">I am MD Kamrul Islam, an aspiring web developer.
-Welcome to my personal portfolio website.</p>
-<p id="aboutBn">আমি এমডি কামরুল ইসলাম। এটি আমার ব্যক্তিগত
-ওয়েবসাইট ও পোর্টফোলিও।</p>
+<p class="lang-en">I am MD Kamrul Islam, an aspiring web developer. Welcome to my personal portfolio website.</p>
+<p class="lang-bn">আমি এমডি কামরুল ইসলাম। এটি আমার ব্যক্তিগত ওয়েবসাইট ও পোর্টফোলিও।</p>
 </section>
 
 <section id="skills">
@@ -115,27 +123,38 @@ Welcome to my personal portfolio website.</p>
 
 <section id="contact">
 <h2>Contact Me | যোগাযোগ</h2>
-
-<a href="https://wa.me/8801732668283">WhatsApp</a>
-
-<a href="https://www.facebook.com/MDkislam.786">Facebook</a>
-
-<a href="mailto:Kamrulislam977968@gmail.com">Email Me</a>
-
+<div class="contact-links">
+  <a class="btn" href="https://wa.me/8801732668283" target="_blank">WhatsApp</a>
+  <a class="btn" href="https://www.facebook.com/MDkislam.786" target="_blank">Facebook</a>
+  <a class="btn" href="mailto:Kamrulislam977968@gmail.com">Email Me</a>
+</div>
 </section>
+
 <footer>
 <p>© 2026 MD KAMRUL ISLAM</p>
 <p>Designed with passion.</p>
 </footer>
 
 <script>
-let bangla=false;
+let isBangla = false;
 function toggleLang(){
- bangla=!bangla;
- document.getElementById("en").style.display=bangla?"none":"block";
- document.getElementById("bn").style.display=bangla?"block":"none";
- document.getElementById("aboutEn").style.display=bangla?"none":"block";
- document.getElementById("aboutBn").style.display=bangla?"block":"none";
+  isBangla = !isBangla;
+  
+  // ইংরেজি লেখা ও বাংলা লেখা টগল করা
+  const enElements = document.querySelectorAll('.lang-en');
+  const bnElements = document.querySelectorAll('.lang-bn');
+  const langBtn = document.getElementById('langBtn');
+
+  enElements.forEach(el => {
+    el.style.display = isBangla ? 'none' : 'block';
+  });
+  
+  bnElements.forEach(el => {
+    el.style.display = isBangla ? 'block' : 'none';
+  });
+
+  // বাটনের নাম পরিবর্তন
+  langBtn.innerText = isBangla ? 'English' : 'বাংলা';
 }
 </script>
 
