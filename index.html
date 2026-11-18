@@ -1,229 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MD KAMRUL ISLAM | Web Developer Dashboard</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MD KAMRUL ISLAM – Web Developer</title>
+<meta name="description" content="মাদ্রাসা, স্কুল ও ব্যবসার জন্য আধুনিক ওয়েবসাইট ও ম্যানেজমেন্ট সিস্টেম।">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Sora:wght@600;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family: Arial, sans-serif;
-  background: #f0f2f5;
-  color: #333;
-  padding: 15px;
-}
+:root{--ink:#0C130F;--deep:#07271E;--green:#0B5D45;--green2:#0E7A5A;--gold:#C9A227;--bg:#F3F6F4;--line:#DCE4DF;--muted:#5C6B63}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Hind Siliguri',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,.en{font-family:'Sora','Hind Siliguri',sans-serif}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.hidden{display:none!important}
 
-/* প্রজেক্ট হেডার স্টাইল (MK লোগো সহ) */
-.project-header {
-  text-align: center;
-  background: #111;
-  color: white;
-  padding: 25px 15px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  border-bottom: 4px solid #c9a227;
-}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(7,39,30,.94);backdrop-filter:blur(8px);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;gap:14px;height:58px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;flex:1}
+.mono{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font:700 .8rem 'Sora',sans-serif;color:var(--gold)}
+nav{display:none;gap:22px;font-size:.95rem}
+nav a{text-decoration:none;color:#CFE3D8}
+nav a:hover{color:var(--gold)}
+.admin-btn{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer}
+@media(min-width:720px){nav{display:flex}}
 
-.mk-logo-circle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: #111;
-  color: white;
-  border: 3px solid #c9a227;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  font-weight: bold;
-  margin: 0 auto 12px auto;
-}
+/* hero */
+.hero{background:
+ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M45 5l10 25 25-10-10 25 25 10-25 10 10 25-25-10-10 25-10-25-25 10 10-25-25-10 25-10-10-25 25 10z' fill='none' stroke='%23fff' stroke-opacity='.06'/%3E%3C/svg%3E"),
+ linear-gradient(165deg,var(--deep),#04150F);color:#fff;padding:56px 0 64px}
+.hero .wrap{display:grid;gap:32px}
+.hero h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1.15;letter-spacing:-.02em}
+.role{color:var(--gold);font-weight:600;margin:10px 0 16px;font-size:1.05rem}
+.hero p{color:#C4D6CC;max-width:520px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-size:1rem}
+.btn.gold{background:var(--gold);color:#1A1500}
+.btn.line{border-color:#ffffff55;color:#fff}
+.badge{justify-self:start;border:1px solid #ffffff2e;border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:16px;background:#ffffff0a}
+.badge .ar{font-family:'Amiri',serif;color:var(--gold);font-size:2.2rem;line-height:1}
+.badge small{display:block;color:#A9C2B6}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.4fr 1fr;align-items:center}.badge{justify-self:end}}
 
-.project-header h1 {
-  font-size: 22px;
-  margin-bottom: 5px;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
-.project-header p {
-  font-size: 14px;
-  color: #c9a227;
-  font-weight: 500;
-}
+/* sections */
+section{padding:56px 0}
+.sec-h{margin-bottom:26px}
+.sec-h h2{font-size:1.6rem}
+.sec-h p{color:var(--muted)}
+.svc{display:grid;gap:0;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.svc div{padding:20px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:4px 14px}
+.svc div:last-child{border:0}
+.svc .i{grid-row:span 2;width:44px;height:44px;border-radius:10px;background:#E6F2EC;display:grid;place-items:center;font-size:1.3rem}
+.svc b{font-size:1.05rem}
+.svc span{color:var(--muted);font-size:.93rem}
+@media(min-width:720px){.svc{grid-template-columns:1fr 1fr 1fr}.svc div{border-right:1px solid var(--line)}.svc div:nth-child(3n){border-right:0}.svc div:nth-last-child(-n+3){border-bottom:0}}
 
-/* ড্যাশবোর্ড গ্রিড */
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto 20px auto;
-}
+.proj{background:var(--deep);color:#fff;border-radius:16px;padding:26px;display:grid;gap:18px;border-left:5px solid var(--gold)}
+.proj h3{font-size:1.35rem;font-family:'Sora','Hind Siliguri',sans-serif}
+.proj p{color:#C4D6CC}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:.82rem;border:1px solid #ffffff33;border-radius:20px;padding:3px 12px;color:#DCEBE3}
+.proj ul{list-style:none;display:grid;gap:6px;color:#DCEBE3;font-size:.95rem}
+.proj li::before{content:"✓ ";color:var(--gold)}
+@media(min-width:720px){.proj{grid-template-columns:1.3fr 1fr;align-items:center;padding:34px}}
 
-.card {
-  background: #1b4d3e;
-  color: white;
-  padding: 20px 10px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  border: 1px solid #c9a227;
-}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skills span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 16px;font-weight:500}
 
-.card h3 {
-  font-size: 15px;
-  margin-top: 8px;
-  margin-bottom: 5px;
-}
+.contact{background:#fff;border-top:1px solid var(--line)}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.links .btn{background:var(--green);color:#fff}
+.links .btn.alt{background:none;border-color:var(--green);color:var(--green)}
+footer{background:var(--ink);color:#8FA398;text-align:center;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px));font-size:.9rem}
 
-.card p {
-  font-size: 12px;
-  color: #d1d5db;
-}
-
-/* অ্যাডমিন লগইন সেকশন */
-.admin-login-box {
-  background: white;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.admin-login-box h2 {
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 20px;
-  color: #111;
-}
-
-.form-group {
-  margin-bottom: 12px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 5px;
-  color: #555;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.login-btn-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.login-btn {
-  background: #111;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.login-btn:hover {
-  background: #333;
-}
-
-.forgot-pass {
-  text-align: center;
-  margin-top: 12px;
-  font-size: 13px;
-}
-
-.forgot-pass a {
-  color: #111;
-  text-decoration: none;
-}
+/* login modal */
+dialog{margin:auto;border:0;border-radius:16px;padding:0;width:min(92vw,380px);background:#fff;color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+.dlg{padding:24px 22px}
+.dlg h3{margin-bottom:4px;font-size:1.2rem}
+.dlg label{display:block;font-size:.88rem;color:var(--muted);margin:14px 0 5px}
+.dlg input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit}
+.dlg input:focus{outline:none;border-color:var(--green2)}
+.dlg .btn{width:100%;margin-top:18px;background:var(--green);color:#fff}
+.dlg .x{float:right;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--muted)}
+.err{color:#B3261E;font-size:.88rem;min-height:1.3em;margin-top:8px}
+.fg{display:block;text-align:center;margin-top:12px;font-size:.9rem;color:var(--green2);cursor:pointer;background:none;border:0;width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 </style>
 </head>
-
 <body>
 
-<!-- হেডার সেকশন (MK লোগো এবং নাম সহ) -->
-<div class="project-header">
-  <div class="mk-logo-circle">MK</div>
-  <h1>MD KAMRUL ISLAM</h1>
-  <p>WEB DEVELOPER</p>
-</div>
-
-<!-- ড্যাশবোর্ড কার্ডসমূহ -->
-<div class="dashboard-grid">
-  <div class="card">
-    <div style="font-size: 22px;">👨‍💻</div>
-    <h3>Projects</h3>
-    <p>পোর্টফোলিও প্রজেক্ট</p>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><span class="mono">MK</span><span class="en" style="font-size:.95rem;letter-spacing:.02em">MD KAMRUL ISLAM</span></a>
+    <nav><a href="#services">সেবা</a><a href="#projects">প্রজেক্ট</a><a href="#skills">দক্ষতা</a><a href="#contact">যোগাযোগ</a></nav>
+    <button class="admin-btn" onclick="document.getElementById('dlg').showModal()">Admin</button>
   </div>
+</header>
 
-  <div class="card">
-    <div style="font-size: 22px;">🌐</div>
-    <h3>Web Design</h3>
-    <p>মডার্ন ডিজাইন</p>
-  </div>
-
-  <div class="card">
-    <div style="font-size: 22px;">📅</div>
-    <h3>Activity</h3>
-    <p>Active</p>
-  </div>
-
-  <div class="card">
-    <div style="font-size: 22px;">📊</div>
-    <h3>Analytics</h3>
-    <p>পারফরম্যান্স</p>
-  </div>
-
-  <div class="card">
-    <div style="font-size: 22px;">🔔</div>
-    <h3>Notices</h3>
-    <p>নোটিশ বোর্ড</p>
-  </div>
-
-  <div class="card">
-    <div style="font-size: 22px;">📝</div>
-    <h3>Contact</h3>
-    <p>যোগাযোগ</p>
+<div id="top" class="hero">
+  <div class="wrap">
+    <div>
+      <h1>MD KAMRUL ISLAM</h1>
+      <div class="role en">Web Developer</div>
+      <p>মাদ্রাসা, স্কুল ও ছোট ব্যবসার জন্য সহজ, দ্রুত ও মোবাইল-বান্ধব ওয়েবসাইট এবং ম্যানেজমেন্ট সিস্টেম বানাই।</p>
+      <div class="cta">
+        <a class="btn gold" href="#projects">প্রজেক্ট দেখুন</a>
+        <a class="btn line" href="#contact">যোগাযোগ করুন</a>
+      </div>
+    </div>
+    <div class="badge">
+      <span class="ar">نور العلم</span>
+      <div><b class="en">Noorul Ilm</b><small>School &amp; Madrasa Management</small></div>
+    </div>
   </div>
 </div>
 
-<!-- লগইন ফর্ম -->
-<div class="admin-login-box">
-  <h2>Admin Login</h2>
-  <form>
-    <div class="form-group">
-      <label>ইমেইল (Admin Email)</label>
-      <input type="email" placeholder="Kamrulislam977968@gmail.com" required>
+<section id="services">
+  <div class="wrap">
+    <div class="sec-h"><h2>আমি যা করি</h2><p>আপনার প্রয়োজন অনুযায়ী পুরো সমাধান।</p></div>
+    <div class="svc">
+      <div><span class="i">🌐</span><b>ওয়েবসাইট ডিজাইন</b><span>আধুনিক, দ্রুত ও সব ডিভাইসে সুন্দর দেখায়।</span></div>
+      <div><span class="i">🏫</span><b>ম্যানেজমেন্ট সিস্টেম</b><span>ছাত্র, শিক্ষক, ফি ও উপস্থিতি এক জায়গায়।</span></div>
+      <div><span class="i">🔐</span><b>নিরাপদ লগইন</b><span>অ্যাডমিন অ্যাক্সেস ও সুরক্ষিত ডেটাবেস।</span></div>
+      <div><span class="i">📊</span><b>ড্যাশবোর্ড ও রিপোর্ট</b><span>আয়, ব্যয় ও উপস্থিতির হিসাব এক নজরে।</span></div>
+      <div><span class="i">🔔</span><b>নোটিশ বোর্ড</b><span>অভিভাবকদের কাছে দ্রুত তথ্য পৌঁছানো।</span></div>
+      <div><span class="i">🛠</span><b>সাপোর্ট ও আপডেট</b><span>চালু হওয়ার পরেও পাশে থাকা।</span></div>
     </div>
-    
-    <div class="form-group">
-      <label>পাসওয়ার্ড (Password)</label>
-      <input type="password" placeholder="••••••••" required>
-    </div>
+  </div>
+</section>
 
-    <div class="login-btn-container">
-      <button type="submit" class="login-btn">Login</button>
+<section id="projects" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h"><h2>বৈশিষ্ট্যযুক্ত প্রজেক্ট</h2></div>
+    <div class="proj">
+      <div>
+        <h3>Noorul Ilm – ম্যানেজমেন্ট সিস্টেম</h3>
+        <p style="margin:8px 0 14px">স্কুল ও মাদ্রাসার সব কাজ মোবাইল থেকেই চালানোর অ্যাডমিন প্যানেল।</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span></div>
+        <div class="cta"><a class="btn gold" href="https://mdkamrulislamalhanafi.github.io/noorul-ilm/">লাইভ দেখুন</a></div>
+      </div>
+      <ul>
+        <li>ছাত্র, শিক্ষক ও স্টাফ ব্যবস্থাপনা</li>
+        <li>দৈনিক উপস্থিতি ও চার্ট</li>
+        <li>ফি আদায় ও বাকির রিমাইন্ডার</li>
+        <li>বেতন, ফলাফল, সনদ ও নোটিশ</li>
+      </ul>
     </div>
+  </div>
+</section>
 
-    <div class="forgot-pass">
-      <a href="#">পাসওয়ার্ড ভুলে গেছেন?</a>
-    </div>
-  </form>
-</div>
+<section id="skills" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h"><h2>দক্ষতা</h2></div>
+    <div class="skills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Firebase</span><span>GitHub Pages</span><span>Responsive Design</span><span>UI Design</span></div>
+  </div>
+</section>
 
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-h"><h2>যোগাযোগ</h2><p>নতুন ওয়েবসাইট বা সিস্টেমের কথা বলতে নিচের যেকোনো মাধ্যমে লিখুন।</p></div>
+    <div class="links" id="links"></div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> MD KAMRUL ISLAM · সর্বস্বত্ব সংরক্ষিত</footer>
+
+<!-- Admin login -->
+<dialog id="dlg">
+  <div class="dlg">
+    <button class="x" onclick="document.getElementById('dlg').close()" aria-label="বন্ধ">×</button>
+    <h3>Admin Login</h3>
+    <label for="em">ইমেইল</label><input id="em" type="email" autocomplete="username">
+    <label for="pw">পাসওয়ার্ড</label><input id="pw" type="password" autocomplete="current-password">
+    <div class="err" id="err"></div>
+    <button class="btn" id="lb" onclick="login()">লগইন</button>
+    <button class="fg" onclick="forgot()">পাসওয়ার্ড ভুলে গেছেন?</button>
+  </div>
+</dialog>
+
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import{getAuth,signInWithEmailAndPassword,sendPasswordResetEmail}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+/* ===== এখানে নিজের তথ্য বসান (ফাঁকা রাখলে বাটন দেখাবে না) ===== */
+const CONTACT={
+  whatsapp:'8801732668283',
+  phone:'01732668283',
+  email:'Kamrulislam977968@gmail.com',
+  facebook:'https://www.facebook.com/share/1JVvwS2p8j/'
+};
+const AFTER_LOGIN="https://mdkamrulislamalhanafi.github.io/noorul-ilm/"; // লগইনের পর যে পেজে যাবে
+
+const $=id=>document.getElementById(id);
+$('yr').textContent=new Date().getFullYear().toLocaleString('bn-BD',{useGrouping:false});
+const L=[];
+if(CONTACT.whatsapp)L.push(`<a class="btn" href="https://wa.me/${CONTACT.whatsapp}" target="_blank" rel="noopener">💬 হোয়াটসঅ্যাপ</a>`);
+if(CONTACT.phone)L.push(`<a class="btn alt" href="tel:${CONTACT.phone}">📞 ফোন করুন</a>`);
+if(CONTACT.email)L.push(`<a class="btn alt" href="mailto:${CONTACT.email}">✉️ ইমেইল</a>`);
+if(CONTACT.facebook)L.push(`<a class="btn alt" href="${CONTACT.facebook}" target="_blank" rel="noopener">👍 ফেসবুক</a>`);
+$('links').innerHTML=L.length?L.join(''):'<p style="color:var(--muted)">যোগাযোগের তথ্য শীঘ্রই যুক্ত হবে।</p>';
+
+const auth=getAuth(initializeApp({
+  apiKey:"AIzaSyAzuZfOdDjztQvgEbtDoO-DQJO_1Hqnsf4",
+  authDomain:"noorul-ilm-management.firebaseapp.com",
+  projectId:"noorul-ilm-management",
+  storageBucket:"noorul-ilm-management.firebasestorage.app",
+  messagingSenderId:"1091358323396",
+  appId:"1:1091358323396:web:65a0fed12ecb5c749f4f91"
+}));
+const msg={'auth/invalid-credential':'ইমেইল বা পাসওয়ার্ড ভুল।','auth/invalid-email':'ইমেইল সঠিক নয়।','auth/too-many-requests':'অনেকবার চেষ্টা হয়েছে, পরে আবার চেষ্টা করুন।','auth/network-request-failed':'ইন্টারনেট সংযোগ চেক করুন।'};
+async function login(){
+  const e=$('em').value.trim(),p=$('pw').value;
+  if(!e||!p){$('err').textContent='ইমেইল ও পাসওয়ার্ড লিখুন।';return}
+  $('err').textContent='';$('lb').disabled=true;$('lb').textContent='অপেক্ষা করুন...';
+  try{await signInWithEmailAndPassword(auth,e,p);location.href=AFTER_LOGIN}
+  catch(x){$('err').textContent=msg[x.code]||'লগইন হয়নি। আবার চেষ্টা করুন।';$('lb').disabled=false;$('lb').textContent='লগইন'}
+}
+async function forgot(){
+  const e=$('em').value.trim();
+  if(!e){$('err').textContent='আগে ইমেইল লিখুন।';return}
+  try{await sendPasswordResetEmail(auth,e);$('err').style.color='#0B5D45';$('err').textContent='রিসেট লিংক ইমেইলে পাঠানো হয়েছে।'}
+  catch(x){$('err').style.color='#B3261E';$('err').textContent=msg[x.code]||'পাঠানো যায়নি।'}
+}
+Object.assign(window,{login,forgot});
+</script>
 </body>
 </html>
